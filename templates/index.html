@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm border-dark mb-5">
+            <div class="card-header bg-dark text-white text-center">
+                <h4 class="mb-0">Generovat oficiální omluvenku do zeměpisu</h4>
+            </div>
+            <div class="card-body">
+                {% if chyba %}
+                <div class="alert alert-danger">{{ chyba }}</div>
+                {% endif %}
+                
+                <form method="POST">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Tvé jméno a příjmení:</label>
+                        <input type="text" name="jmeno" class="form-control" placeholder="např. Ondřej">
+                    </div>
+                    <div class="row">
+                        <div class="col-6 mb-3">
+                            <label class="form-label fw-bold">Třída:</label>
+                            <input type="text" name="trida" class="form-control" value="7.O">
+                        </div>
+                        <div class="col-6 mb-3">
+                            <label class="form-label fw-bold">Datum:</label>
+                            <input type="date" name="datum" class="form-control">
+                        </div>
+                    </div>
+                    <div class="mb-3 border p-3 bg-light rounded">
+                        <label class="form-label fw-bold text-primary">Na co přesně se vymlouváš?</label>
+                        <select name="typ_omluvy" class="form-select border-primary">
+                            <option value="absence">Nebyl jsem / Nebudu ve škole</option>
+                            <option value="ukol">Nemám domácí úkol</option>
+                            <option value="zkouseni">Nemůžu jít na zkoušení</option>
+                        </select>
+                    </div>
+                    <div class="mb-4 border p-3 bg-light rounded">
+                        <label class="form-label fw-bold text-danger">Z jakého (absurdního) důvodu?</label>
+                        <select name="duvod" class="form-select border-danger">
+                            <option value="sutry">Geologický průzkum (hledal jsem šutry)</option>
+                            <option value="krtek">Fyzická rvačka s krtečkem</option>
+                            <option value="koaly">Masivní invaze koal</option>
+                            <option value="lidl">Nekonečná fronta na pečivo v Lidlu</option>
+                            <option value="alkohol">Náhodná degustace alkoholu</option>
+                            <option value="krokodyl">Bojoval jsem s krokodýlem</option>
+                            <option value="banan">Uklouznutí na banánu</option>
+                            <option value="voda">Zjištění, že voda je mokrá</option>
+                            <option value="maslo">Zalepení arašídovým máslem</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-dark w-100 py-2 fs-5">Vygenerovat pro p. Veselského</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

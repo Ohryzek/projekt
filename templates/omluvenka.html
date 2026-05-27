@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center mb-5">
+    <div class="col-md-8">
+        <div class="card shadow border-dark">
+            <div class="card-body p-5">
+                <h2 class="text-center text-uppercase fw-bold mb-4 border-bottom border-2 pb-2">Oficiální omluvenka pro předmět Zeměpis</h2>
+                <div class="row mb-4 fs-5">
+                    <div class="col-sm-6">
+                        <strong>Žadatel:</strong> {{ data.jmeno }}<br>
+                        <strong>Třída:</strong> {{ data.trida }}
+                    </div>
+                    <div class="col-sm-6 text-sm-end">
+                        <strong>Vyučující:</strong> Mgr. Roman Veselský<br>
+                        <strong>Datum:</strong> {{ data.datum }}
+                    </div>
+                </div>
+                
+                <p class="lead" style="text-align: justify;">
+                    Vážený pane učiteli Veselský,<br><br>
+                    {{ data.uvod }} Důvodem mé indispozice je zcela nevyhnutelná a vskutku neočekávaná událost:
+                </p>
+                
+                <p class="fs-5 p-4 my-4 bg-light border-start border-4 border-dark fst-italic">
+                    "{{ data.text }}"
+                </p>
+                
+                <p class="mt-4 lead">
+                    Pevně věřím ve Vaše pochopení, neboť mé studijní nasazení v geografických disciplínách je jinak absolutně bezchybné a příkladné pro zbytek třídy.
+                </p>
+                
+                <div class="mt-5 d-flex justify-content-between border-top pt-4">
+                    <div>Ve Žďáře nad Sázavou dne: .......................</div>
+                    <div>Podpis žadatele: ..........................................</div>
+                </div>
+            </div>
+            <div class="card-footer text-center bg-white border-0 pb-4">
+                <button onclick="window.print()" class="btn btn-outline-dark me-2">🖨️ Vytisknout omluvenku</button>
+                <a href="{{ url_for('index') }}" class="btn btn-dark">Zpět na generátor</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
