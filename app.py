@@ -16,7 +16,7 @@ def index():
         if not jmeno or not trida or not datum or not typ_omluvy or not duvod:
             chyba = "Pro vygenerování platné zeměpisné omluvy musíš vyplnit všechna pole!"
         else:
-            # 1. Dynamický úvod podle toho, o co žák žádá
+            # 1. ÚVOD
             uvody = {
                 "absence": "tímto oficiálně žádám o omluvení mé neúčasti v hodině zeměpisu.",
                 "ukol": "tímto se Vám hluboce omlouvám, ale bohužel nemám vypracovaný zadaný domácí úkol.",
@@ -24,7 +24,7 @@ def index():
             }
             zvoleny_uvod = uvody.get(typ_omluvy, "tímto Vás žádám o shovívavost.")
 
-            # 2. Slovník všech absurdních výmluv (nyní fungují pro cokoliv)
+            # 2. Výmluvy
             formalni_texty = {
                 "sutry": "Byl jsem totiž nucen provést neodkladný geologický průzkum terénu za účelem sběru unikátních litosférických vzorků (lidově 'šutrů').",
                 "krtek": "Dostal jsem se do nevyprovokované fyzické konfrontace s mimořádně agresivním zástupcem druhu Talpa europaea (krtek obecný), který mi zkřížil cestu.",
